@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la /tmp/holberton/boot
+ls -la ./boot
