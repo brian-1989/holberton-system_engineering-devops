@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -mmin -5 | head -n 10
