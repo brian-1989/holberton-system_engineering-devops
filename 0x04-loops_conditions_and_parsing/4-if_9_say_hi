@@ -2,13 +2,12 @@
 # This script is displaying "Holberton School" 10 times and 9th iteration, display hi.
 i="0"
 j="9"
-while [ $i -lt 11 ]
+while [ $i -lt 10 ]
     do
         if [ "$i" -eq "$j" ]
         then
             echo "Hi"
-        else
-            echo "Holberton School"
         fi
+        echo "Holberton School"
         i=$((i+1))
     done
