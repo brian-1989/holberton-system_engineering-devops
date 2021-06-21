@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script creates a file, displays To infinity and beyond indefinitely,
+# displays I hate the kill command when receiving a SIGTERM signal, displays Y U no love me?!
+# when receiving a SIGINT signal and deletes the file and terminates itself
+# when receiving a SIGQUIT or SIGTERM signal.
+echo $$ > holbertonscript.pid
+function _signal_sigterm () {
+    echo "I hate the kill command"
+    _signal_sigquit
+}
+function _signal_sigint () {
+    echo "Y U no love me?!"
+}
+function _signal_sigquit () {
+    rm holbertonscript.pid
+    exit
+}
+while :
+    do
+        echo "To infinity and beyond"
+        trap _signal_sigterm SIGTERM
+        trap _signal_sigint SIGINT
+        trap _signal_sigquit SIGQUIT
+    done
