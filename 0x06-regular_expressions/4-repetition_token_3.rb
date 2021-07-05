@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-# This script find capital letters
-puts ARGV[0].scan(/[A-Z]/).join
+# This script find the 't' character, of optional form and infinitive
+puts ARGV[0].match(/hb(t+|)n/)
