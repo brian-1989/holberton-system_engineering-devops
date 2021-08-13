@@ -1,5 +1,5 @@
 # This scrip process kill.
-exec {'process kill':
+exec {'kill':
   command => 'pkill killmenow',
-  path    => '/usr/local',
+  path    => '/usr/local/bin/:/bin/',
 }
