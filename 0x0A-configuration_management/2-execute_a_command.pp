@@ -1,5 +1,6 @@
 # This scrip process kill.
 exec {'kill':
-  command => 'pkill killmenow',
-  path    => '/usr/local/bin/:/bin/',
+  command  => '/usr/bin/pkill killmenow',
+  provider => 'shell',
+  returns  => [0, 1],
 }
