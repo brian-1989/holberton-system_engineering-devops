@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # This script Nginx must be running, and listening on port 80 of all the server’s active IPv4 IPs
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo chmod 777 /etc/nginx/sites-available/default
 sed -i "s/listen 80 default_server;/listen *:80;/" /etc/nginx/sites-available/default
 sudo /etc/init.d/nginx restart
