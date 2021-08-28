@@ -35,22 +35,21 @@ global
         errorfile 504 /etc/haproxy/errors/504.http
     
 frontend front-http
-   bind *:80
-   reqadd X-Forwarded-Proto:\ http
-   default_backend back-http
+        bind *:80
+        reqadd X-Forwarded-Proto:\ http
+        default_backend back-http
 
 frontend front-https
-   bind *:443 ssl crt /etc/haproxy/certs/brianzapata.tech.pem
-   reqadd X-Forwarded-Proto:\ https
-   acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-   use_backend letsencrypt-backend if letsencrypt-acl
-   default_backend back-http
+        bind *:443 ssl crt /etc/haproxy/certs/brianzapata.tech.pem
+        reqadd X-Forwarded-Proto:\ https
+        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt-backend if letsencrypt-acl
+        default_backend back-http
 
 backend back-http
-   redirect scheme https if !{ ssl_fc }
-   server 3015-web-01 34.75.30.56:80 check
-   server 3015-web-02 54.234.166.77:80 check
+        redirect scheme https if !{ ssl_fc }
+        server 3015-web-01 34.75.30.56:80 check
+        server 3015-web-02 54.234.166.77:80 check
 
 backend letsencrypt-backend
-   server letsencrypt 127.0.0.1:54321
- 
+        server letsencrypt 127.0.0.1:54321
