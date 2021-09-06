@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script blocks all incoming traffic, except the following TCP ports: 22, 2222 and 80
+ufw default deny incoming
+ufw allow 22
+ufw allow 443
+ufw allow 80
+ufw enable
