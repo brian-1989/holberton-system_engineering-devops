@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # This script create a user called nginx and running as nginx user
 # nginx must be listening on all active IPs on port 8080
-useradd nginx
 sudo /etc/init.d/apache2 stop
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-sudo /etc/init.d/nginx restart
+sudo -u nginx service nginx start
