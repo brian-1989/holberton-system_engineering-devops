@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script create a new user and is passed the whoami command                                                                                              
 useradd "$1"
-su -c whoami ls "$1"
+sudo -u "$1" whoami
