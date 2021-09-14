@@ -11,16 +11,16 @@ if __name__ == "__main__":
     url_todos = requests.get(
         'https://jsonplaceholder.typicode.com/todos').json()
     url_users = requests.get(
-        'https://jsonplaceholder.typicode.com/users/2').json()
+        'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])).json()
     user_name = ""
     my_dict_2 = {}
     my_list = []
     for key, value in url_users.items():
         if key == "username":
             user_name = value
-    with open("{}.json".format(2), 'w') as file:
+    with open("{}.json".format(argv[1]), 'w') as file:
         for _dict in url_todos:
-            if _dict.get("userId") == int(2):
+            if _dict.get("userId") == int(argv[1]):
                 my_dict_1 = {}
                 for key, value in _dict.items():
                     if key == 'title':
