@@ -6,8 +6,6 @@ with the list todos and users, with the id passed in the command line.
 import requests
 from sys import argv
 
-from requests.models import parse_url
-
 if __name__ == "__main__":
     url_todos = requests.get(
         'https://jsonplaceholder.typicode.com/todos').json()
