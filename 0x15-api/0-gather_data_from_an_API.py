@@ -30,4 +30,4 @@ if __name__ == "__main__":
     for _dict in url_todos:
         if _dict.get("userId") == int(argv[1]) and\
                 _dict.get("completed") is True:
-            print("\t{}".format(_dict.get("title")))
+            print("\t {}".format(_dict.get("title")))
