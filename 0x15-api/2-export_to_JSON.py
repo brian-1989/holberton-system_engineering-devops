@@ -3,8 +3,8 @@
 and create a file in Json format.
 
 """
-import requests
 import json
+import requests
 from sys import argv
 
 if __name__ == "__main__":
