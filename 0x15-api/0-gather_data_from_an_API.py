@@ -25,8 +25,8 @@ if __name__ == "__main__":
     for key, value in url_users.items():
         if key == "name":
             user_name = value
-    print("Employee {} is done with tasks({}/{}):\
-        ".format(user_name, task_done, task_number))
+    print("Employee {} is done with tasks({}/{}):".format(
+        user_name, task_done, task_number))
     for _dict in url_todos:
         if _dict.get("userId") == int(argv[1]) and\
                 _dict.get("completed") is True:
