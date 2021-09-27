@@ -12,7 +12,7 @@ def top_ten(subreddit):
 
     """
     response = requests.get(
-        'https://www.reddit.com/r/{}/top.json?limit=10&t=year'.format(
+        'https://www.reddit.com/r/{}/hot.json?limit=10&t=year'.format(
             subreddit), allow_redirects=False)
     if response.status_code == 200:
         data_json = response.json()
