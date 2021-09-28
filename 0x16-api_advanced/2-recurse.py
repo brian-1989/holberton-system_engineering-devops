@@ -25,4 +25,4 @@ def recurse(subreddit, hot_list=[], after=""):
                     hot_list.append(key_title['data']['title'])
             return recurse(subreddit, hot_list, data_json['data']['after'])
     else:
-        print(None)
+        return None
